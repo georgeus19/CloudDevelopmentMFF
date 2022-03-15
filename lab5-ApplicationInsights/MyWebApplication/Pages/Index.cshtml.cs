@@ -7,23 +7,24 @@ namespace MyWebApplication.Pages
 {
 	public class IndexModel : PageModel
 	{
-		// TODO: Hodnoty by bylo správné dát do konfigurace. Pro přehlednost a mít vše na jednom místě za účelem studia, nechávám tuto zjednodušenou variantu.
-		private const string AzureStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=...;AccountKey=...;EndpointSuffix=core.windows.net";
-		private const string AzureStorageContainerName = "mycontainer";
+
+		// Add connection string if you want to run it locally!!!
+		private const string AzureStorageConnectionString = ":))))";
+		private const string AzureStorageContainerName = "lab3container";
 
 		public List<BlobItem>? Blobs { get; set; }
 
 		public void OnGet()
 		{
-			Blobs = new List<BlobItem>();
-			//Blobs = CreateClient().GetBlobs().ToList();
-		}
+			//Blobs = new List<BlobItem>();
+            Blobs = CreateClient().GetBlobs().ToList();
+        }
 
 		public FileStreamResult OnGetDownloadBlob(string blobName)
 		{
 			var blobClient = CreateClient().GetBlobClient(blobName);
 			var contentType = blobClient.GetProperties().Value.ContentType;
-			var stream = blobClient.OpenRead(); // není třeba řešit Dispose - stream nám uzavře infrastruktura Razor Pages.
+			var stream = blobClient.OpenRead();
 			return new FileStreamResult(stream, contentType);
 		}
 
