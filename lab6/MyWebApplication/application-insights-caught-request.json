@@ -1,0 +1,31 @@
+{
+  "name": "AppDependencies",
+  "time": "2022-03-15T16:13:03.7078567Z",
+  "iKey": "37061c45-3909-4ddf-a781-f40e7b58d849",
+  "tags": {
+    "ai.application.ver": "1.0.0.0",
+    "ai.cloud.roleInstance": "LAPTOP-ARCTSGR0",
+    "ai.operation.id": "28d03e324345c754c1d92a06143f1dfd",
+    "ai.operation.parentId": "3dfa00a746ec06af",
+    "ai.operation.name": "GET /Index",
+    "ai.location.ip": "::1",
+    "ai.internal.sdkVersion": "dotnetc:2.20.0-103",
+    "ai.internal.nodeName": "LAPTOP-ARCTSGR0"
+  },
+  "data": {
+    "baseType": "RemoteDependencyData",
+    "baseData": {
+      "ver": 2,
+      "name": "BlobContainerClient.GetBlobs",
+      "id": "33448461ea28e4e3",
+      "duration": "00:00:01.1617559",
+      "success": true,
+      "type": "InProc | Microsoft.Storage",
+      "properties": {
+        "_MS.ProcessedByMetricExtractors": "(Name:'Dependencies', Ver:'1.1')",
+        "DeveloperMode": "true",
+        "AspNetCoreEnvironment": "Development"
+      }
+    }
+  }
+}
