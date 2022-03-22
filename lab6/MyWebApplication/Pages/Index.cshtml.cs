@@ -27,6 +27,8 @@ namespace MyWebApplication.Pages
 		private BlobContainerClient CreateClient()
 		{
 			Uri containerEndpoint = new Uri("https://cloudmffslab3storageacc.blob.core.windows.net/lab3container");
+			
+			return new Azure.Storage.Blobs.BlobContainerClient(containerEndpoint, new Azure.Identity.ManagedIdentityCredential("977e9dcc-5e1f-4dec-be7b-1da636ca0146"));
 			return new Azure.Storage.Blobs.BlobContainerClient(containerEndpoint, new Azure.Identity.DefaultAzureCredential());
 		}
 	}
