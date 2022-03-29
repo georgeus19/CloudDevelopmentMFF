@@ -5,16 +5,19 @@
 	using Azure.Messaging.EventHubs;
 	using Azure.Messaging.EventHubs.Consumer;
 	using Azure.Messaging.EventHubs.Producer;
+	using System.IO;
 
 	// Source: https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-dotnet-standard-getstarted-send
 	// More samples: https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/eventhub/Azure.Messaging.EventHubs/samples
 	public class Program
 	{
-		private const string EventHubConnectionString = "<INSERT YOUR CONNECTION STRING>"; // ie Endpoint=sb://XXX.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXX
-		private const string EventHubName = "<INSERT YOUR EVENT HUB NAME>"; // ie myeventhub1
+		static private string EventHubConnectionString = ""; // ie Endpoint=sb://XXX.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXX
+		private const string EventHubName = "my-event-hub1"; // ie myeventhub1
 
 		public static async Task Main(string[] args)
 		{
+			using StreamReader connectionStringReader = new StreamReader("./../../../connectionString.txt");
+			EventHubConnectionString = connectionStringReader.ReadLine();
 			await MainAsync(args);
 		}
 
