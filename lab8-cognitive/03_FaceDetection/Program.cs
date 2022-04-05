@@ -11,7 +11,7 @@ namespace _03_FaceDetection
 		// DOC: https://docs.microsoft.com/cs-cz/azure/cognitive-services/face/QuickStarts/CSharp
 
 		// Replace <Subscription Key> with your valid subscription key.
-		const string subscriptionKey = "<Subscription Key>";
+		const string subscriptionKey = ":))";
 
 		// NOTE: You must use the same region in your REST call as you used to
 		// obtain your subscription keys. For example, if you obtained your
